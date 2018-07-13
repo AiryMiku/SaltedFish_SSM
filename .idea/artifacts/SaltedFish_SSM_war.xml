@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SaltedFish_SSM:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/SaltedFish_SSM_war</output-path>
+    <root id="archive" name="SaltedFish_SSM_war.war">
+      <element id="artifact" artifact-name="SaltedFish_SSM:war exploded" />
+    </root>
+  </artifact>
+</component>
