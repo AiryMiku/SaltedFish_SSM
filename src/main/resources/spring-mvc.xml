@@ -22,7 +22,6 @@
     </bean>
     <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
     <!--controller里面使用了 @RequestMapping(value = "/index", method = RequestMethod.GET)这个注解，然后我的spring-mvc配置文件也注册了一个handlerAdapter,去掉,原因代考究-->
-
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>

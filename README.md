@@ -1,11 +1,29 @@
+
+# 前言
+虽然写过Springboot，但是外面的环境基本上都是ssm为主（ssh就算了。。。）,所以开始了ssm的掉坑之旅（真tm坑）
+
+# 环境
+* Windows 10
+* Intelij idea
+* jdk8
+
+## 创建项目
+首先是新建一个空的Maven项目，右边的模板什么都不要选
+![ssm_1](img/ssm_1.png)
+
+然后就是一路的Next，填上Group_ID什么的
+
+## 配置Maven下载依赖
+在pom.xml填入以下代码，版本自行选择
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.airy</groupId>
-    <artifactId>SaltedFish_SSM</artifactId>
+    <groupId>你自己的</groupId>
+    <artifactId>同上</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -251,7 +269,7 @@
 
     </dependencies>
     <build>
-        <finalName>SaltedFish_SSM</finalName>
+        <finalName>hugo</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -263,3 +281,36 @@
         </resources>
     </build>
 </project>
+```
+![ssm_2](img/ssm_2.png)
+填好后记得点击这里的同步，让maven自己下载依赖
+
+## 文件目录
+如图
+![ssm_3](img/ssm_3.png)
+resource需要自己设置成资源根目录，右键make directory as
+
+## Spring、SpringMVC、MyBatis配置
+代码多而繁杂，就直接放地址（真的不是我懒）
+https://github.com/AiryMiku/SaltedFish_SSM
+* 特别注意
+![ssm_4](img/ssm_4.png)
+这里的MVC注解使用了org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
+不使用网上的AnnotionHandlerAdapter（提示已废弃，还是追下新东西学习下），需要像如图添加注释驱动标志，controller才能正常工作
+
+## 设置项目结构
+* Modules
+![ssm_5](img/ssm_5.png)
+// idea非常智能，会有提示一键设置好Spring了
+![ssm_6](img/ssm_6.png)
+webapp目录要注意一下，自己更改为正确的路径
+* Artifacts
+![ssm_7](img/ssm_7.png)
+// 熟悉在idea Java Web开发的同学应该也是信手拈来
+
+## 最后
+像所有依赖tomcat运行的项目，设置好自己的tomcat服务器，就可以大快朵颐地进行开发啦
+
+## 尾巴
+由于csdn长期霸屏百度搜索结果，内容与时下开发环境脱节严重，ec泛滥，导致自己也苦苦爬帖再一步步摸索才能比较顺利地搭起来ssm这个环境，经过这一番地折腾，我觉得Spring Boot真的太好了，没有那么多恼人地配置，一步到位，而且不停地失败是会影响学习的心情的，故出此文，给别人、给自己也多多少少有点帮助。
+
